@@ -10,7 +10,7 @@ function getRecipes() {
   return db('recipes');
 }
 
-function getList(recipe_id) {
+function getShoppingList(recipe_id) {
   return db('recipe_ingredients')
     .join('ingredients', 'recipe_ingredients.ingredient_id', '=', 'ingredients.id')
     .select('name', 'quantity', 'unit')

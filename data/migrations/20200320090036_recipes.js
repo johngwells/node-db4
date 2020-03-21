@@ -33,7 +33,7 @@ exports.up = function(knex) {
       tbl.string('unit', 32)
     })
     .createTable('recipe_steps', tbl => {
-      increments()
+      tbl.increments()
 
       tbl
         .integer('recipe_id')

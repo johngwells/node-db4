@@ -20,7 +20,7 @@ function getShoppingList(recipe_id) {
 
 function getInstructions(recipe_id) {
   return db('recipe_steps')
-    .select('recipe_steps')
+    .select('step', 'instructions')
     .where({recipe_id})
     .orderBy('step')
 }

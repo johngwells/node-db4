@@ -12,7 +12,9 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id/shoppingList', (req, res) => {
-  Recipes.getShoppingList()
+  const id = req.params.id;
+
+  Recipes.getShoppingList(id)
     .then(ingredients => res.status(200).json(ingredients))
     .catch(err => res.status(500).json({ error: 'Could not get ingredients' }))
 })

@@ -4,7 +4,9 @@ const router = express.Router();
 
 const Ingredient = require('./ingredients-model');
 
-router.get('/:id/recipes', (req, res) => {
+// Gets all recipes that use the same ingredient
+// 1: water 2: lettuce 3: bread 4: tomato
+router.get('/:id', (req, res) => {
   const id = req.params.id;
 
   Ingredient.getRecipes(id)
